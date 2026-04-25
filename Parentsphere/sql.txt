@@ -1,0 +1,42 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS parentsphere;
+USE parentsphere;
+
+-- Table: gfm_student
+CREATE TABLE IF NOT EXISTS gfm_student (
+    roll_no INT PRIMARY KEY,
+    gfm_name VARCHAR(255),
+    student_name VARCHAR(255)
+);
+
+-- Table: leave_request
+CREATE TABLE IF NOT EXISTS leave_request (
+    roll_no INT,
+    date DATE,
+    reason TEXT
+);
+
+-- Table: login
+CREATE TABLE IF NOT EXISTS login (
+    email VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255),
+    role VARCHAR(50)
+);
+
+-- Table: remedial_table
+CREATE TABLE IF NOT EXISTS remedial_table (
+    roll_no INT,
+    subject VARCHAR(100),
+    date DATE,
+    day VARCHAR(20),
+    time_slot VARCHAR(50)
+);
+
+-- Table: students
+CREATE TABLE IF NOT EXISTS students (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(255),
+    attendance VARCHAR(10),  -- 'Yes' or 'No' based on screenshot
+    M3DSA INT,               -- Subject marks column 1
+    MPSEPPL INT              -- Subject marks column 2
+);
